@@ -10,6 +10,17 @@
 </head>
 
 <body>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '269756451603391',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v12.0'
+            });
+        };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <div class="container">
         <form class="form" id="login">
             <h1 class="form_title">Login</h1>
@@ -34,17 +45,7 @@
     </div>
     <script src="./src/main.js">
     </script>
-    <script>
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '269756451603391',
-                autoLogAppEvents: true,
-                xfbml: true,
-                version: 'v12.0'
-            });
-        };
-    </script>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
 
 </body>
 
