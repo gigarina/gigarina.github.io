@@ -28,16 +28,14 @@
             }
         }
 
-        function checkLoginState(){
-            FB.getLoginStatus(function(response){
+        function checkLoginState() {
+            FB.getLoginStatus(function (response) {
                 statusChangeCallback(response);
             })
         }
     </script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-    <fb:login-button
-        scope="public_profile, email"
-        onLogin="checkLoginState();">
+    <fb:login-button scope="public_profile, email" onLogin="checkLoginState();">
     </fb:login-button>
 
 </body>
