@@ -20,11 +20,18 @@
             });
 
             FB.getLoginStatus(function (response) {
-                setLoginStatusMessage(loginForm, "done!");
-              //  statusChangeCallback(response);
+                statusChangeCallback(response);
 
             })
         };
+
+        function statusChangeCallback(response){
+            if(response.status === 'connected'){
+                console.log('logged in and authenticated');
+            } else{
+                console.log('not authenticated');
+            }
+        }
     </script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <div class="container">
