@@ -47,8 +47,9 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 });
 FB.getLoginStatus(function(response){
-    statusChangeCallback(response);
     setLoginStatusMessage(loginForm, "done!");
+    statusChangeCallback(response);
+    
 })
 
 FB.login(function(response) {
