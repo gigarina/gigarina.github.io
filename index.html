@@ -18,6 +18,12 @@
                 xfbml: true,
                 version: 'v12.0'
             });
+
+            FB.getLoginStatus(function (response) {
+                setLoginStatusMessage(loginForm, "done!");
+                statusChangeCallback(response);
+
+            })
         };
     </script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>

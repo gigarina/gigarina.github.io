@@ -54,11 +54,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 
 });
-FB.getLoginStatus(function(response){
-    setLoginStatusMessage(loginForm, "done!");
-    statusChangeCallback(response);
-    
-})
+
 
 FB.login(function(response) {
     if (response.status === 'connected') {
