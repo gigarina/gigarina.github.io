@@ -17,7 +17,7 @@
             <div class="form_input_group">
                 <input type="text" class="form_input" autofocus placeholder="Username or email">
                 <div class="form_input_error_message">
-                    
+
                 </div>
             </div>
             <div class="form_input_group">
@@ -30,9 +30,21 @@
                 login status message
             </div>
         </form>
-        
+
     </div>
-    <script src="./src/main.js"></script>
+    <script src="./src/main.js">
+    </script>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '269756451603391',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v12.0'
+            });
+        };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 </body>
 
