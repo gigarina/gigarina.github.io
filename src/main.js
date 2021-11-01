@@ -11,6 +11,12 @@ function setInputError(inputElement, message){
     inputElement.parentElement.querySelector(".form_input_error_message").textContent = message;
 }
 
+function setLoginStatusMessage(formElement, message){
+    const messsageElement= formElement.querySelector(".login_status_message");
+
+    messsageElement.textContent= message;
+}
+
 
 
 document.addEventListener("DOMContentLoaded", () =>{
@@ -40,3 +46,13 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 
 });
+FB.getLoginStatus(function(response){
+    statusChangeCallback(response);
+})
+FB.login(function(response) {
+    if (response.status === 'connected') {
+      setLoginStatusMessage(loginForm,"you are logged in! :)");
+    } else {
+        setLoginStatusMessage(loginForm,"you are not logged in! :(");
+    }
+  });
