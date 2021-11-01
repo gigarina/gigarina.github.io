@@ -44,6 +44,10 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     })
 
+    document.querySelector(".form_button").addEventListener("click", ()=>{
+        setLoginStatusMessage(loginForm, "done!");
+    })
+
 
 });
 FB.getLoginStatus(function(response){
