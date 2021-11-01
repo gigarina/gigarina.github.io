@@ -2,11 +2,8 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Login/Sign Up Form</title>
-    <link rel="stylesheet" href="./src/main.css">
-
+    <title>FBAuth</title>
 </head>
 
 <body>
@@ -18,46 +15,20 @@
                 xfbml: true,
                 version: 'v12.0'
             });
-
             FB.getLoginStatus(function (response) {
                 statusChangeCallback(response);
-
-            })
+            });
         };
-
         function statusChangeCallback(response){
             if(response.status === 'connected'){
                 console.log('logged in and authenticated');
-            } else{
+            }
+            else{
                 console.log('not authenticated');
             }
         }
     </script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-    <div class="container">
-        <form class="form" id="login">
-            <h1 class="form_title">Login</h1>
-            <div class="form_message form_message_error"></div>
-            <div class="form_input_group">
-                <input type="text" class="form_input" autofocus placeholder="Username or email">
-                <div class="form_input_error_message">
-
-                </div>
-            </div>
-            <div class="form_input_group">
-                <input type="password" class="form_input" autofocus placeholder="Password">
-                <div class="form_input_error_message">
-                </div>
-            </div>
-            <button class="form_button" type="submit">Continue</button>
-            <div class="login_status_message">
-                login status message
-            </div>
-        </form>
-
-    </div>
-    <script src="./src/main.js">
-    </script>
 
 
 </body>
