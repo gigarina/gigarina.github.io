@@ -19,17 +19,26 @@
                 statusChangeCallback(response);
             });
         };
-        function statusChangeCallback(response){
-            if(response.status === 'connected'){
+        function statusChangeCallback(response) {
+            if (response.status === 'connected') {
                 console.log('logged in and authenticated');
             }
-            else{
+            else {
                 console.log('not authenticated');
             }
         }
+
+        function checkLoginState(){
+            FB.getLoginStatus(function(response){
+                statusChangeCallback(response);
+            })
+        }
     </script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-
+    <fb:login-button>
+        scope="public_profile, email"
+        onLogin="checkLoginState();"
+    </fb:login-button>
 
 </body>
 
